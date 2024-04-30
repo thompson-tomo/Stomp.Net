@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard1.3</TargetFramework>
+    <TargetFrameworks>netstandard1.3;netstandard2.1</TargetFrameworks>
     <PackageId>Stomp.Net</PackageId>
     <Authors>Dave Senn</Authors>
     <Company>Dave Senn</Company>
@@ -30,6 +30,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="extend" Version="1.2.1" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.3'">
     <PackageReference Include="System.Net.NameResolution" Version="4.3.0" />
     <PackageReference Include="System.Net.Security" Version="4.3.2" />
     <PackageReference Include="System.Threading.Thread" Version="4.3.0" />
